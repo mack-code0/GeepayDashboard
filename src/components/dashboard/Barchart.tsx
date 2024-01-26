@@ -33,7 +33,7 @@ export default function Barchart() {
     const [focusBar, setFocusBar] = useState<number | null>(null);
 
     return (
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" minWidth={600} height={300}>
             <BarChart
                 data={salesTrends}
                 onMouseMove={(state: any) => {

@@ -11,6 +11,14 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: ${props => props.theme.primaryBg};
   }
+
+  .hide-scrollbar{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+  }
 `;
 
 function App() {

@@ -20,8 +20,8 @@ import { ThemeContext } from "../context/ThemeContext";
 const Dashboard = () => {
     const { activeTheme } = useContext(ThemeContext)
 
-    return (<div className="tw-p-5">
-        <Row gutter={[20, 20]}>
+    return (<div className="tw-p-3 lg:tw-p-5">
+        <Row  gutter={[20, 20]}>
             <Col xs={24} lg={14}>
                 <div className="tw-p-[16px] tw-border tw-border-grey800 dark:tw-border-grey700/[0.2] tw-rounded-[14px] tw-bg-white dark:tw-bg-dark200 tw-h-full tw-flex tw-flex-col">
                     <div className="tw-flex tw-items-center">
@@ -47,13 +47,13 @@ const Dashboard = () => {
                                 ]
                             }}
                         >
-                            <button className="tw-space-x-[2px] tw-p-[3px] lg:tw-py-[3px] lg:tw-pl-[9px] tw-rounded-full tw-border tw-border-grey200 dark:tw-border-grey300 tw-flex tw-items-center">
+                            <button className="tw-space-x-[2px] tw-p-[3px] lg:tw-py-[3px] tw-pl-[9px] tw-rounded-full tw-border tw-border-grey200 dark:tw-border-grey300 tw-flex tw-items-center">
                                 <span className="tw-text-header dark:tw-text-grey900 tw-font-[400] tw-text-xs">Weekly</span>
                                 <ArrowDown transform="scale(0.7)" className="tw-text-dark300 dark:tw-text-grey300" />
                             </button>
                         </Dropdown>
                     </div>
-                    <div className="tw-mt-auto">
+                    <div className="tw-mt-3 tw-overflow-scroll hide-scrollbar">
                         <Barchart />
                     </div>
                 </div>

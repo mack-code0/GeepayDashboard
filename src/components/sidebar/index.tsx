@@ -155,7 +155,8 @@ const Styles = styled.div`
         display: none;
         margin-left: ${SIZES.sidebarWidth}px;
         position: absolute;
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
         left: 0;
         transition: all 0.2s;
     }
