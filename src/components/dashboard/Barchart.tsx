@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
     BarChart,
     Bar,
@@ -12,7 +12,7 @@ import {
 import { salesTrends } from "../../data/salesTrends";
 
 
-const CustomTooltip = ({ active, payload, label }: any) => {
+const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
         return (
             <div className="tw-bg-[#090C2C] dark:tw-bg-dark100 tw-px-4 tw-py-1 tw-rounded-lg">
@@ -70,7 +70,7 @@ export default function Barchart() {
                     cursor={{ fill: "transparent" }}
                 />
                 <Bar dataKey="value" radius={[20, 20, 0, 0]}>
-                    {salesTrends.map((entry, index) => (
+                    {salesTrends.map((_, index) => (
                         <Cell
                             width={25}
                             key={`cell-${index}`}
