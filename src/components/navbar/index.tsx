@@ -4,9 +4,30 @@ import Calendar from "../../assets/images/icons/calendar.svg?react"
 import Bell from "../../assets/images/icons/bell.svg?react"
 import ArrowDown from "../../assets/images/icons/arrowdown.svg?react"
 import Logo from "../../assets/images/logo.svg?react"
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
-    return (<div className="tw-py-[15px] lg:tw-py-[18px] tw-px-4 lg:tw-px-5 tw-border-b tw-border-grey100 dark:tw-border-grey700/[0.2]">
+    const [scrollPosition, setScrollPosition] = useState<number>(0);
+
+    const handleScroll = () => {
+        // Updates the scroll position when the user scrolls
+        setScrollPosition(window.scrollY);
+    };
+
+    useEffect(() => {
+        // Attach the scroll event listener when the component mounts
+        window.addEventListener('scroll', handleScroll);
+
+        // Detach the scroll event listener when the component unmounts
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []); // The empty dependency array ensures that the effect runs only once on mount
+
+
+    const classForNavbarInSmallScreen = `${scrollPosition >= 80 && "tw-transition-all tw-fixed lg:tw-relative tw-z-10 tw-right-[0] tw-top-[0] tw-w-full tw-bg-[#FAFAFA]/50 dark:tw-bg-dark100/30 tw-backdrop-blur-sm"}`
+
+    return (<div className={`tw-py-[15px] lg:tw-py-[18px] tw-px-4 lg:tw-px-5 tw-border-b tw-border-grey100 dark:tw-border-grey700/[0.2] ${classForNavbarInSmallScreen}`}>
         <Row gutter={[20, 20]} className="tw-items-center">
             <Col xs={5} lg={14}>
                 <Logo className="lg:tw-hidden tw-block" />

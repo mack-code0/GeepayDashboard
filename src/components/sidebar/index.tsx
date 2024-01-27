@@ -37,7 +37,7 @@ export default function SideBar() {
         setActiveTab(tab)
     }
 
-    return <Styles className={`${!sidebarOpen && "close-sidebar"} dark:tw-bg-dark100 tw-bg-grey400 tw-border-r tw-border-grey500 dark:tw-border-0`}>
+    return <Styles className={`${!sidebarOpen && "close-sidebar"} dark:tw-bg-dark100 tw-bg-grey400 tw-border-r tw-border-grey500 dark:tw-border-0 !tw-z-20`}>
         <div className="top-section tw-flex tw-flex-col tw-py-5 tw-items-center">
             <div>
                 <Logo />
