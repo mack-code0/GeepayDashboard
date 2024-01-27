@@ -4,8 +4,10 @@ import Sidebar from "./components/sidebar"
 import Dashboard from "./pages/Dashboard"
 import Navbar from "./components/navbar"
 import { createGlobalStyle } from "styled-components"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { ThemeContext } from "./context/ThemeContext"
+import { notification } from "antd"
+import Logo from "./assets/images/logo.svg?react"
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -23,6 +25,29 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   const { activeTheme } = useContext(ThemeContext)
+  const [api, contextHolder] = notification.useNotification();
+
+  const openNotification = () => {
+    const key = `open${Date.now()}`;
+    api.open({
+      closeIcon: <span className="dark:tw-text-grey100/[0.7]">x</span>,
+      icon: null,
+      className: "tw-border tw-border-grey800 dark:tw-border-grey700/[0.2] tw-rounded tw-bg-white dark:tw-bg-dark200",
+      message: <span className="dark:tw-text-grey100 tw-font-bold tw-flex tw-items-center"><Logo className="tw-mr-2" width={20} /> Notification</span>,
+      description: <span className="dark:tw-text-grey100/[0.7] tw-text-[#898989]">
+        Your Dashboard theme is set to follow your system's theme by default.
+        <br />
+        You can manually switch between dark and light themes in the dashboard sidebar.
+      </span>,
+      key,
+      onClose: () => api.destroy(key),
+      duration: null
+    });
+  };
+
+  useEffect(() => {
+    openNotification()
+  }, [])
 
   return <ThemeProvider
     theme={{
@@ -30,6 +55,7 @@ function App() {
     }}>
     <Styles className="tw-flex">
       <GlobalStyle />
+      {contextHolder}
       <Sidebar />
       <div className="main">
         <Navbar />

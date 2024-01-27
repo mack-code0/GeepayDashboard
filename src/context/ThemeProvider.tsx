@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
 
 interface ThemeProviderProps {
@@ -6,11 +6,21 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-    const [activeTheme, setActiveTheme] = useState<"DARK" | "LIGHT" | null>("LIGHT");
+    const [activeTheme, setActiveTheme] = useState<"DARK" | "LIGHT" | null>(
+        window.matchMedia
+            ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? "DARK" : "LIGHT")
+            : "LIGHT"
+    );
 
-    // useEffect(() => {
-    //     document.documentElement.classList.add('tw-dark')
-    // }, []);
+    useEffect(() => {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('tw-dark')
+            setActiveTheme("DARK");
+        } else {
+            document.documentElement.classList.remove('tw-dark')
+            setActiveTheme("LIGHT");
+        }
+    }, []);
 
     const handleSetActiveTheme = (activeTheme: "DARK" | "LIGHT" | null) => {
         if (activeTheme === "LIGHT") {
