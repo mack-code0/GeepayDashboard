@@ -35,7 +35,7 @@ function App() {
       className: "tw-border tw-border-grey800 dark:tw-border-grey700/[0.2] tw-rounded tw-bg-white dark:tw-bg-dark200",
       message: <span className="dark:tw-text-grey100 tw-font-bold tw-flex tw-items-center"><Logo className="tw-mr-2" width={20} /> Notification</span>,
       description: <span className="dark:tw-text-grey100/[0.7] tw-text-[#898989]">
-        Your Dashboard theme is set to follow your system's theme by default.
+        The Dashboard theme is set to follow your system's theme by default.
         <br />
         You can manually switch between dark and light themes in the dashboard sidebar.
       </span>,
