@@ -21,7 +21,7 @@ const Dashboard = () => {
     const { activeTheme } = useContext(ThemeContext)
 
     return (<div className="tw-px-4 tw-py-5 lg:tw-p-5">
-        <Row  gutter={[20, 20]}>
+        <Row gutter={[20, 20]}>
             <Col xs={24} lg={14}>
                 <div className="tw-p-[16px] tw-border tw-border-grey800 dark:tw-border-grey700/[0.2] tw-rounded-[14px] tw-bg-white dark:tw-bg-dark200 tw-h-full tw-flex tw-flex-col">
                     <div className="tw-flex tw-items-center">
@@ -31,18 +31,22 @@ const Dashboard = () => {
                         <Dropdown
                             trigger={["click"]}
                             menu={{
+                                className: "dark:!tw-bg-dark200 dark:tw-border dark:tw-border-grey700/[0.2]",
                                 items: [
                                     {
                                         key: 1,
                                         label: "Daily",
+                                        className: "dark:!tw-text-grey900/[0.7]"
                                     },
                                     {
                                         key: 2,
                                         label: "Yearly",
+                                        className: "dark:!tw-text-grey900/[0.7]"
                                     },
                                     {
                                         key: 3,
                                         label: "Weekly",
+                                        className: "dark:!tw-text-grey900/[0.7]"
                                     }
                                 ]
                             }}

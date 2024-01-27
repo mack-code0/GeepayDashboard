@@ -50,20 +50,22 @@ const Navbar = () => {
                         trigger={["click"]}
                         placement="bottomCenter"
                         menu={{
+                            className: "dark:!tw-bg-dark200 dark:tw-border dark:tw-border-grey700/[0.2]",
                             items: [
                                 {
                                     key: 1,
                                     label: <span className="tw-font-semibold tw-text-[#787486]">Notifications</span>,
-                                    className: "tw-border-b tw-border-grey100",
+                                    className: "dark:!tw-bg-dark200 tw-border-b tw-border-grey100 dark:tw-border-grey700/[0.2]",
                                     disabled: true
                                 },
                                 {
                                     key: 2,
                                     label: "All",
+                                    className: "dark:!tw-text-grey900"
                                 },
                                 {
                                     key: 3,
-                                    label: <span>Unread <b className="tw-text-error tw-ml-2">(30)</b></span>,
+                                    label: <span className="dark:!tw-text-grey900">Unread <b className="tw-text-error tw-ml-2">(30)</b></span>,
                                 },
                             ]
                         }}
@@ -76,14 +78,17 @@ const Navbar = () => {
                     <Dropdown
                         trigger={["click"]}
                         menu={{
+                            className: "dark:!tw-bg-dark200 dark:tw-border dark:tw-border-grey700/[0.2]",
                             items: [
                                 {
                                     key: 1,
                                     label: "Profile",
+                                    className: "dark:!tw-text-grey900"
                                 },
                                 {
                                     key: 2,
                                     label: "Settings",
+                                    className: "dark:!tw-text-grey900"
                                 },
                                 {
                                     key: 3,
