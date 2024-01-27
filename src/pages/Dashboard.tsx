@@ -20,7 +20,7 @@ import { ThemeContext } from "../context/ThemeContext";
 const Dashboard = () => {
     const { activeTheme } = useContext(ThemeContext)
 
-    return (<div className="tw-p-3 lg:tw-p-5">
+    return (<div className="tw-px-4 tw-py-5 lg:tw-p-5">
         <Row  gutter={[20, 20]}>
             <Col xs={24} lg={14}>
                 <div className="tw-p-[16px] tw-border tw-border-grey800 dark:tw-border-grey700/[0.2] tw-rounded-[14px] tw-bg-white dark:tw-bg-dark200 tw-h-full tw-flex tw-flex-col">

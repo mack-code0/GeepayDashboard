@@ -6,13 +6,14 @@ import ArrowDown from "../../assets/images/icons/arrowdown.svg?react"
 import Logo from "../../assets/images/logo.svg?react"
 
 const Navbar = () => {
-    return (<div className="tw-py-[18px] tw-px-5 tw-border-b tw-border-grey100 dark:tw-border-grey700/[0.2]">
+    return (<div className="tw-py-[15px] lg:tw-py-[18px] tw-px-4 lg:tw-px-5 tw-border-b tw-border-grey100 dark:tw-border-grey700/[0.2]">
         <Row gutter={[20, 20]} className="tw-items-center">
             <Col xs={5} lg={14}>
                 <Logo className="lg:tw-hidden tw-block" />
                 <div className="tw-hidden lg:tw-flex tw-justify-between tw-items-center">
                     <h6 className="tw-text-header dark:tw-text-grey900 tw-font-[600] tw-text-lg">Dashboard</h6>
                     <Input
+                        classNames={{ input: "dark:placeholder:!tw-text-grey300" }}
                         className="dark:tw-bg-dark200 tw-ml-auto !tw-border-grey200 dark:!tw-border-grey700/[0.2] dark:!tw-text-grey700 tw-rounded-[24px] tw-py-2 tw-w-[300px]"
                         placeholder="Search..."
                         prefix={<Search className="tw-mr-1" />} />
@@ -46,7 +47,7 @@ const Navbar = () => {
                             ]
                         }}
                     >
-                        <button className="lg:tw-mx-10 tw-p-[10px] tw-rounded-full tw-text-grey200 dark:tw-text-grey900 tw-border tw-border-grey200 dark:tw-border-grey300">
+                        <button className="tw-mr-5 lg:tw-mx-10 tw-p-[10px] tw-rounded-full tw-text-grey200 dark:tw-text-grey900 tw-border tw-border-grey200 dark:tw-border-grey300">
                             <Bell />
                         </button>
                     </Dropdown>
