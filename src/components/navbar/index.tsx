@@ -25,7 +25,7 @@ const Navbar = () => {
     }, []); // The empty dependency array ensures that the effect runs only once on mount
 
 
-    const classForNavbarInSmallScreen = `${scrollPosition >= 80 && "tw-transition-all tw-fixed lg:tw-relative tw-z-10 tw-right-[0] tw-top-[0] tw-w-full tw-bg-[#FAFAFA]/50 dark:tw-bg-dark100/30 tw-backdrop-blur-sm"}`
+    const classForNavbarInSmallScreen = `${scrollPosition >= 80 && "tw-transition-all tw-fixed lg:tw-relative tw-z-10 tw-right-[0] tw-top-[0] tw-w-full tw-bg-[#FAFAFA]/50 dark:tw-bg-grey600/60 tw-backdrop-blur-sm"}`
 
     return (<div className={`tw-py-[15px] lg:tw-py-[18px] tw-px-4 lg:tw-px-5 tw-border-b tw-border-grey100 dark:tw-border-grey700/[0.2] ${classForNavbarInSmallScreen}`}>
         <Row gutter={[20, 20]} className="tw-items-center">
@@ -68,7 +68,7 @@ const Navbar = () => {
                             ]
                         }}
                     >
-                        <button className="tw-mr-5 lg:tw-mx-10 tw-p-[10px] tw-rounded-full tw-text-grey200 dark:tw-text-grey900 tw-border tw-border-grey200 dark:tw-border-grey300">
+                        <button className="tw-mr-5 lg:tw-mx-10 tw-p-[10px] tw-rounded-full tw-text-dark300 dark:tw-text-grey900 tw-border tw-border-grey200 dark:tw-border-grey300">
                             <Bell />
                         </button>
                     </Dropdown>
